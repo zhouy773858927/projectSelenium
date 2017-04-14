@@ -17,3 +17,8 @@ time.sleep(2)
 #后退到百度首页
 print("back to %s"%first_url)
 driver.back()
+time.sleep(2)
+#前进到新闻页面
+print("forward to %s"%second_url)
+driver.forward()
+
