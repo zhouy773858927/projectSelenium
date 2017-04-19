@@ -3,8 +3,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import os
-
-driver = webdriver.Firefox()
+time.sleep(2)
+driver = webdriver.Chrome()
+time.sleep(2)
 file_path = "file:///" + os.path.abspath("level_locate.html")
 driver.get(file_path)
 
