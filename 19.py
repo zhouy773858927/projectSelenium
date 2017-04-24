@@ -13,8 +13,7 @@ coolie = driver.get_cookies()
 print(coolie)
 time.sleep(5)
 #再次访问 xxxx 网站，将会自动登录
-driver1 = webdriver.Chrome()
-driver1.get("http://192.168.0.186:6008/saferycom/com_index.do")
+driver.refresh()#刷新
 coolie = driver.get_cookies()
 print(coolie)
 
