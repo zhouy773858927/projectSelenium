@@ -58,26 +58,4 @@ class Baidu(unittest.TestCase):
         self.assertEquals([],self.verificationErrors)
 
 if __name__ == '__main__':
-
-    #定义一个单元测试容器
-    testunit = unittest.TestSuite()
-
-    #将测试用例加入测试容器中
-    testunit.addTest(Baidu("test_baidu_search"))
-    testunit.addTest(Baidu("test_baidu_set"))
-
-    #定义报告存放路径
-    filename = 'E:\\requestsSelenium\\request.html'
-    fp = open(filename ,'wb')
-
-    #定义测试报告
-    runner = HTMLTestRunner.HTMLTestRunner(
-        stream = fp,
-        title = u'百度搜索测试报告',
-        description=u'用例执行情况'
-    )
-
-    #执行用例
-    runner.run(testunit)
-    fp.close()
-
+    unittest.main()
