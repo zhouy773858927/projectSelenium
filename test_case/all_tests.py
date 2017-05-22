@@ -16,7 +16,7 @@ fp = open(filename, 'wb')
 # 定义测试报告
 runner = HTMLTestRunner.HTMLTestRunner(
     stream=fp,
-    title=u'百度搜索测试报告',
+    title=u'测试报告',
     description=u'用例执行情况'
 )
 
