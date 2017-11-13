@@ -30,10 +30,9 @@ class Main(unittest.TestCase):
         driver.switch_to_frame("tabId_1301")
         #工单号
         element = WebDriverWait(driver, 10).until(lambda driver: self.driver.find_element_by_xpath("//*[@id='searchDocId']"))
-        element.send_keys("1508309831931")
-        time.sleep(2)
+        element.send_keys("1510555060521")
         #搜索按钮
-        element = WebDriverWait(driver, 10).until(
+        element = WebDriverWait(driver, 10, 1).until(
             lambda driver: self.driver.find_element_by_xpath("/html/body/div[1]/div/div/div[2]/div[1]/div[2]/span[8]/span/a/span"))
         element.click()
         #调用截图方法
@@ -71,16 +70,17 @@ class Main(unittest.TestCase):
         element=WebDriverWait(driver, 10).until(lambda driver :self.driver.find_element_by_xpath("//*[@id='二级稽核']"))
         #element=WebDriverWait(driver, 10, 0.5).until(lambda driver :driver.find_element_by_xpath("//div[9]/div[2]/ul/li[3]"))
         element.click()
+        # 调用截图方法（####目前此处截图黑屏）
+        Jietu.jietu(self)
         time.sleep(1)
         driver.switch_to_frame("tabId_1303")
         #工单号
         element = WebDriverWait(driver, 10).until(
             lambda driver: self.driver.find_element_by_xpath("//*[@id='searchDocId']"))
-        element.send_keys("1508309831931")
-        time.sleep(2)
+        element.send_keys("1510555060521")
         #搜索按钮
         element = WebDriverWait(driver, 10).until(
-            lambda driver: self.driver.find_element_by_xpath("/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[3]/span[1]/a/span/span"))
+            lambda driver: self.driver.find_element_by_xpath("/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[3]/span[1]/a/span"))
         element.click()
         #查看按钮
         #element=WebDriverWait(driver, 10).until(lambda driver :driver.find_element_by_xpath("//div[@id='menu']/div[9]/div[2]/ul/li[3]"))
@@ -115,9 +115,8 @@ class Main(unittest.TestCase):
                 element.send_keys("ck")
                 time.sleep(1)
                 #确定按钮
-                ##########bug：定位不到提交按钮
                 element = WebDriverWait(driver, 10).until(
-                    lambda driver: self.driver.find_element_by_xpath("/html/body/div[8]/div[2]/div[2]/a[1]/span/span"))
+                    lambda driver: self.driver.find_element_by_xpath("(//a[@id='undefined']/span/span)[4]"))
                 element.click()
                 # case = driver.find_element_by_xpath("//*[@id='audit_state']")
                 # print(case.text)
@@ -125,7 +124,6 @@ class Main(unittest.TestCase):
                 driver.close()
         driver.switch_to_window(oldhandle)
         time.sleep(5)
-        ##############有bug：二级稽核已经不通过了，但是一级稽核进去时候提示已通过
         # 一级稽核界面
         element = WebDriverWait(driver, 10, 0.5).until(
             lambda driver: self.driver.find_element_by_xpath("//li[@id='一级稽核']"))
@@ -173,8 +171,9 @@ class Main(unittest.TestCase):
                 element.send_keys("ck")
                 # 确定按钮
                 element = WebDriverWait(driver, 10).until(
-                    lambda driver: self.driver.find_element_by_xpath("/html/body/div[5]/div[2]/div[2]/a[1]/span"))
+                    lambda driver: self.driver.find_element_by_xpath("(//a[@id='undefined']/span/span)[2]"))
                 element.click()
+                time.sleep(3)
                 driver.close()
         time.sleep(1)
         # 转到旧句柄
@@ -188,7 +187,7 @@ class Main(unittest.TestCase):
         #工单号
         element = WebDriverWait(driver, 10).until(
             lambda driver: self.driver.find_element_by_xpath("//*[@id='searchDocId']"))
-        element.send_keys("1508309831931")
+        element.send_keys("1510555060521")
         time.sleep(2)
         #搜索按钮
         element = WebDriverWait(driver, 10).until(
