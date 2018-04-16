@@ -26,7 +26,7 @@ while True:
     print(current_time)
     #每1小时获取次本地计算机时间
     time.sleep(3600)
-    #约定每天14时一小时内校检一次
+    #约定每天14时一小时内校检一次，登录成功打印
     if ((18<current_time.tm_hour<=19 ) and (0<=current_time.tm_min<=60) and (0<=current_time.tm_sec<=60)):
         func()
         print("禅道在%s时登录成功" %time.strftime('%Y-%m-%d %H:%M:%S'))
